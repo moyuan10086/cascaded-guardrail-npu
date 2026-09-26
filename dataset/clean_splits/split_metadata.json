@@ -1,0 +1,35 @@
+{
+  "total_raw": 3663,
+  "total_unique": 3551,
+  "splits": {
+    "train": {
+      "count": 2485,
+      "ratio": 0.7,
+      "label_dist": {
+        "fail": 1313,
+        "pass": 833,
+        "optional": 339
+      }
+    },
+    "val": {
+      "count": 533,
+      "ratio": 0.15,
+      "label_dist": {
+        "fail": 281,
+        "pass": 179,
+        "optional": 73
+      },
+      "purpose": "Confidence threshold tuning & calibration ONLY"
+    },
+    "test": {
+      "count": 533,
+      "ratio": 0.15,
+      "label_dist": {
+        "fail": 281,
+        "pass": 179,
+        "optional": 73
+      },
+      "purpose": "Final held-out evaluation"
+    }
+  }
+}

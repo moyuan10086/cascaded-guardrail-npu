@@ -1,0 +1,62 @@
+{
+  "dataset": "dataset\\color_labeled\\audit_dataset_color.jsonl",
+  "split_rule": "按标签分层随机划分，test_ratio=0.2，seed=20260630；optional 也单独按 20% 划入 test。",
+  "total": 3663,
+  "train": 2931,
+  "test": 732,
+  "by_split_label": {
+    "train": {
+      "pass": 953,
+      "optional": 388,
+      "fail": 1590
+    },
+    "test": {
+      "pass": 238,
+      "optional": 97,
+      "fail": 397
+    }
+  },
+  "by_sheet": {
+    "1-生成内容测试题": {
+      "total": 2221,
+      "train": 1773,
+      "test": 448,
+      "train_label": {
+        "pass": 540,
+        "optional": 388,
+        "fail": 845
+      },
+      "test_label": {
+        "pass": 142,
+        "optional": 97,
+        "fail": 209
+      }
+    },
+    "2-应拒答题": {
+      "total": 933,
+      "train": 745,
+      "test": 188,
+      "train_label": {
+        "fail": 745
+      },
+      "test_label": {
+        "fail": 188
+      }
+    },
+    "3-非拒答题": {
+      "total": 509,
+      "train": 413,
+      "test": 96,
+      "train_label": {
+        "pass": 413
+      },
+      "test_label": {
+        "pass": 96
+      }
+    }
+  },
+  "files": {
+    "train_csv": "dataset\\color_labeled\\splits\\训练集_train.csv",
+    "test_csv": "dataset\\color_labeled\\splits\\测试集_test.csv"
+  }
+}

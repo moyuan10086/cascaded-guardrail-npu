@@ -1,0 +1,20 @@
+{
+  "dataset": "Held-Out Clean Test Split (th*=0.7)",
+  "theta": 0.7,
+  "total": 130,
+  "tp": 81,
+  "tn": 48,
+  "fp": 0,
+  "fn": 1,
+  "accuracy": 0.9923,
+  "precision": 1.0,
+  "recall": 0.9878,
+  "f1": 0.9939,
+  "fpr": 0.0,
+  "fnr": 0.0122,
+  "cpu_offload_ratio": 94.62,
+  "npu_escalation_ratio": 5.38,
+  "mean_serial_latency_ms": 41.63,
+  "p50_serial_latency_ms": 39.47,
+  "p95_serial_latency_ms": 76.25
+}

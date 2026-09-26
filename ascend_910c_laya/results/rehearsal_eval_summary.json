@@ -1,0 +1,37 @@
+{
+  "model": "Rehearsal-Based Fine-Tuned Laya GDM",
+  "device": "npu:3",
+  "training_time_sec": 41.84874176979065,
+  "rehearsal_ratio": "15.56%",
+  "in_domain_clean_unseen": {
+    "total": 607,
+    "tp": 368,
+    "tn": 237,
+    "fp": 1,
+    "fn": 1,
+    "accuracy": 0.9967,
+    "fpr": 0.0042,
+    "fnr": 0.0027,
+    "mean_latency_ms": 34.99
+  },
+  "safetybench_zh": {
+    "total": 2100,
+    "tp": 239,
+    "tn": 1127,
+    "fp": 279,
+    "fn": 455,
+    "accuracy": 0.6505,
+    "fpr": 0.1984,
+    "fnr": 0.6556,
+    "mean_latency_ms": 38.89,
+    "category_accuracy": {
+      "Ethics and Morality": 0.5833,
+      "Illegal Activities": 0.7633,
+      "Mental Health": 0.7367,
+      "Offensiveness": 0.6467,
+      "Physical Health": 0.6133,
+      "Privacy and Property": 0.6533,
+      "Unfairness and Bias": 0.5567
+    }
+  }
+}

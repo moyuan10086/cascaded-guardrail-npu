@@ -1,0 +1,242 @@
+{
+  "zero_shot_clm_8b": {
+    "ducs": {
+      "all_635": {
+        "total": 635,
+        "tp": 395,
+        "tn": 23,
+        "fp": 215,
+        "fn": 2,
+        "accuracy": 0.6583,
+        "fpr": 0.9034,
+        "fnr": 0.005,
+        "precision": 0.6475,
+        "recall": 0.995,
+        "f1": 0.7845,
+        "ece_15bin_pct": 22.98,
+        "brier": 0.2644,
+        "roc_auc": 0.7006,
+        "pr_auc": 0.7453
+      },
+      "clean_607": {
+        "total": 607,
+        "tp": 367,
+        "tn": 23,
+        "fp": 215,
+        "fn": 2,
+        "accuracy": 0.6425,
+        "fpr": 0.9034,
+        "fnr": 0.0054,
+        "precision": 0.6306,
+        "recall": 0.9946,
+        "f1": 0.7718,
+        "ece_15bin_pct": 24.29,
+        "brier": 0.2762,
+        "roc_auc": 0.6944,
+        "pr_auc": 0.7276
+      }
+    },
+    "safetybench_zh": {
+      "total": 2100,
+      "tp": 663,
+      "tn": 101,
+      "fp": 1305,
+      "fn": 31,
+      "accuracy": 0.3638,
+      "fpr": 0.9282,
+      "fnr": 0.0447,
+      "category_accuracy": {
+        "Offensiveness": 0.5033,
+        "Unfairness and Bias": 0.3667,
+        "Physical Health": 0.35,
+        "Mental Health": 0.2567,
+        "Illegal Activities": 0.2733,
+        "Ethics and Morality": 0.3767,
+        "Privacy and Property": 0.42
+      }
+    }
+  },
+  "domain_ft_zero_fpr_clm_8b": {
+    "train_head_sec": 2.812,
+    "ducs": {
+      "all_635": {
+        "total": 635,
+        "tp": 387,
+        "tn": 238,
+        "fp": 0,
+        "fn": 10,
+        "accuracy": 0.9843,
+        "fpr": 0.0,
+        "fnr": 0.0252,
+        "precision": 1.0,
+        "recall": 0.9748,
+        "f1": 0.9872,
+        "ece_15bin_pct": 1.07,
+        "brier": 0.0119,
+        "roc_auc": 0.9996,
+        "pr_auc": 0.9997
+      },
+      "clean_607": {
+        "total": 607,
+        "tp": 359,
+        "tn": 238,
+        "fp": 0,
+        "fn": 10,
+        "accuracy": 0.9835,
+        "fpr": 0.0,
+        "fnr": 0.0271,
+        "precision": 1.0,
+        "recall": 0.9729,
+        "f1": 0.9863,
+        "ece_15bin_pct": 1.13,
+        "brier": 0.0125,
+        "roc_auc": 0.9995,
+        "pr_auc": 0.9997
+      }
+    },
+    "safetybench_zh": {
+      "total": 2100,
+      "tp": 97,
+      "tn": 1247,
+      "fp": 159,
+      "fn": 597,
+      "accuracy": 0.64,
+      "fpr": 0.1131,
+      "fnr": 0.8602,
+      "category_accuracy": {
+        "Offensiveness": 0.48,
+        "Unfairness and Bias": 0.57,
+        "Physical Health": 0.6233,
+        "Mental Health": 0.7567,
+        "Illegal Activities": 0.7867,
+        "Ethics and Morality": 0.5767,
+        "Privacy and Property": 0.6867
+      }
+    }
+  },
+  "domain_ft_best_acc_clm_8b": {
+    "train_head_sec": 3.725,
+    "ducs": {
+      "all_635": {
+        "total": 635,
+        "tp": 394,
+        "tn": 234,
+        "fp": 4,
+        "fn": 3,
+        "accuracy": 0.989,
+        "fpr": 0.0168,
+        "fnr": 0.0076,
+        "precision": 0.9899,
+        "recall": 0.9924,
+        "f1": 0.9912,
+        "ece_15bin_pct": 0.79,
+        "brier": 0.0087,
+        "roc_auc": 0.9996,
+        "pr_auc": 0.9998
+      },
+      "clean_607": {
+        "total": 607,
+        "tp": 366,
+        "tn": 234,
+        "fp": 4,
+        "fn": 3,
+        "accuracy": 0.9885,
+        "fpr": 0.0168,
+        "fnr": 0.0081,
+        "precision": 0.9892,
+        "recall": 0.9919,
+        "f1": 0.9905,
+        "ece_15bin_pct": 0.83,
+        "brier": 0.0091,
+        "roc_auc": 0.9996,
+        "pr_auc": 0.9998
+      }
+    },
+    "safetybench_zh": {
+      "total": 2100,
+      "tp": 324,
+      "tn": 833,
+      "fp": 573,
+      "fn": 370,
+      "accuracy": 0.551,
+      "fpr": 0.4075,
+      "fnr": 0.5331,
+      "category_accuracy": {
+        "Offensiveness": 0.42,
+        "Unfairness and Bias": 0.46,
+        "Physical Health": 0.4467,
+        "Mental Health": 0.7333,
+        "Illegal Activities": 0.65,
+        "Ethics and Morality": 0.5333,
+        "Privacy and Property": 0.6133
+      }
+    }
+  },
+  "rehearsal_ft_clm_8b": {
+    "train_head_sec": 3.681,
+    "ducs": {
+      "all_635": {
+        "total": 635,
+        "tp": 396,
+        "tn": 238,
+        "fp": 0,
+        "fn": 1,
+        "accuracy": 0.9984,
+        "fpr": 0.0,
+        "fnr": 0.0025,
+        "precision": 1.0,
+        "recall": 0.9975,
+        "f1": 0.9987,
+        "ece_15bin_pct": 0.83,
+        "brier": 0.0018,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0
+      },
+      "clean_607": {
+        "total": 607,
+        "tp": 368,
+        "tn": 238,
+        "fp": 0,
+        "fn": 1,
+        "accuracy": 0.9984,
+        "fpr": 0.0,
+        "fnr": 0.0027,
+        "precision": 1.0,
+        "recall": 0.9973,
+        "f1": 0.9986,
+        "ece_15bin_pct": 0.86,
+        "brier": 0.0019,
+        "roc_auc": 1.0,
+        "pr_auc": 1.0
+      }
+    },
+    "safetybench_zh": {
+      "total": 2100,
+      "tp": 289,
+      "tn": 1057,
+      "fp": 349,
+      "fn": 405,
+      "accuracy": 0.641,
+      "fpr": 0.2482,
+      "fnr": 0.5836,
+      "category_accuracy": {
+        "Offensiveness": 0.69,
+        "Unfairness and Bias": 0.6,
+        "Physical Health": 0.5867,
+        "Mental Health": 0.7433,
+        "Illegal Activities": 0.7167,
+        "Ethics and Morality": 0.5167,
+        "Privacy and Property": 0.6333
+      }
+    }
+  },
+  "latency_profile_ascend_910c": {
+    "uncached_single_stream_mean_ms": 45.78,
+    "uncached_single_stream_p50_ms": 45.46,
+    "uncached_single_stream_p95_ms": 48.51,
+    "batched_bs64_per_item_ms": 6.64,
+    "batched_bs64_qps": 150.6,
+    "vector_arena_cached_hit_p50_ms": 0.6,
+    "head_only_projection_batch732_ms": 1.25
+  }
+}

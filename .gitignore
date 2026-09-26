@@ -1,0 +1,55 @@
+# =========================================================================
+# Cascaded Guardrail NPU Research Repository (.gitignore)
+# =========================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+
+# Large Model Weights (Gigabytes) - kept on server/local cache
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+ascend_910c_laya/models/
+laya-models/
+models/
+
+# LaTeX compilation intermediates (keep main.pdf and figures)
+latex_paper/*.aux
+latex_paper/*.bbl
+latex_paper/*.blg
+latex_paper/*.log
+latex_paper/*.out
+latex_paper/*.toc
+latex_paper/*.synctex.gz
+latex_paper/*.fdb_latexmk
+latex_paper/*.fls
+arxiv_package/*.aux
+arxiv_package/*.blg
+arxiv_package/*.log
+arxiv_package/*.out
+arxiv_package/*.toc
+arxiv_package/*.synctex.gz
+arxiv_package/*.fdb_latexmk
+arxiv_package/*.fls
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.bak
+*~
+*.tmp
+

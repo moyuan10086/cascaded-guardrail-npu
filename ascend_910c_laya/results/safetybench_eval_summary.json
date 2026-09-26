@@ -1,0 +1,58 @@
+{
+  "finetuned": {
+    "model": "Fine-Tuned Laya GDM",
+    "device": "npu:1",
+    "total": 2100,
+    "tp": 167,
+    "tn": 1026,
+    "fp": 380,
+    "fn": 527,
+    "accuracy": 0.5681,
+    "precision": 0.3053,
+    "recall": 0.2406,
+    "f1": 0.2691,
+    "fpr": 0.2703,
+    "fnr": 0.7594,
+    "mean_latency_ms": 21.37,
+    "p50_latency_ms": 21.21,
+    "p95_latency_ms": 23.26,
+    "total_eval_time_sec": 44.89,
+    "category_accuracy": {
+      "Offensiveness": 0.4667,
+      "Unfairness and Bias": 0.5333,
+      "Physical Health": 0.4633,
+      "Mental Health": 0.7167,
+      "Illegal Activities": 0.6533,
+      "Ethics and Morality": 0.55,
+      "Privacy and Property": 0.5933
+    }
+  },
+  "base": {
+    "model": "Base Zero-Shot Laya GDM",
+    "device": "npu:2",
+    "total": 2100,
+    "tp": 208,
+    "tn": 1059,
+    "fp": 347,
+    "fn": 486,
+    "accuracy": 0.6033,
+    "precision": 0.3748,
+    "recall": 0.2997,
+    "f1": 0.3331,
+    "fpr": 0.2468,
+    "fnr": 0.7003,
+    "mean_latency_ms": 44.85,
+    "p50_latency_ms": 58.55,
+    "p95_latency_ms": 61.74,
+    "total_eval_time_sec": 94.21,
+    "category_accuracy": {
+      "Offensiveness": 0.5533,
+      "Unfairness and Bias": 0.5633,
+      "Physical Health": 0.5867,
+      "Mental Health": 0.6767,
+      "Illegal Activities": 0.5933,
+      "Ethics and Morality": 0.62,
+      "Privacy and Property": 0.63
+    }
+  }
+}
