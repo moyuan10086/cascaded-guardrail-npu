@@ -32,9 +32,9 @@ Real-time LLM safety guardrails suffer from a fundamental tension between **dual
 | Guardrail Model / Paradigm | Accuracy (%) $\uparrow$ | False Positive Rate (FPR %) $\downarrow$ | FNR (%) $\downarrow$ | ECE (%) $\downarrow$ | Brier Score $\downarrow$ | Mean Latency (ms) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Zero-Shot 322M DFM** (`laya`) | 76.61 | 35.71 | 15.45 | 5.38 | 0.1654 | 22.88 (NPU) |
-| **Zero-Shot 8B Contrastive DFM** (`CLM-8B`) | 57.50 | 90.34 | 11.65 | 38.42 | 0.3912 | 45.78 (1-Stream NPU) |
+| **Zero-Shot 8B Contrastive DFM** (`CLM-8B`) | 64.25 | 90.34 | 0.54 | 24.29 | 0.2762 | 45.78 (1-Stream NPU) |
 | **Traditional ML** (`TF-IDF + XGBoost`) | 95.39 | 5.88 | 3.79 | 13.11 | 0.0525 | 38.91 (Fast CPU) |
-| **Domain-FT 8B Contrastive DFM** (`CLM-8B`) | **98.85** | **1.68** (0.00 @ Zero-FPR) | **0.81** | **0.83** | **0.0089** | 45.78 (6.64 Batch / 0.60 Hit) |
+| **Domain-FT 8B Contrastive DFM** (`CLM-8B`) | **98.85** | **1.68** (0.00 @ Zero-FPR) | **0.81** | **0.83** | **0.0091** | 45.78 (6.64 Batch / 0.60 Hit) |
 | **COGNIT-Guard Stage-2 DFM (322M, Ours)** | **98.85** | **0.42** | **1.63** | **1.12** | **0.0104** | **21.77 (Warm NPU)** |
 | **COGNIT-Guard Live Serial Cascade ($\theta^*=0.70$)** | **99.23** | **0.00** | **1.22** | **1.08** | **0.0098** | **41.63 (94.6% CPU)** |
 
@@ -47,12 +47,12 @@ Real-time LLM safety guardrails suffer from a fundamental tension between **dual
 - **CPU Mode A (Diagnostic Mode, `include_evidence=True`)**: **85.36 ms** mean (56.06 ms parsing/scoring + 29.30 ms 3rd-corpus kNN evidence retrieval).
 - **CPU Mode B (Live Fast Gatekeeper, `include_evidence=False`)**: **38.91 ms** mean (P50: 38.12 ms, P95: 54.80 ms).
 - **Ascend 910C Warm HBM Residency (`322M laya`)**: Pinning weights and pre-allocated buffers in 64 GB on-chip HBM reduces NPU latency from 48.20 ms (cold-start) to **21.77 ms** ($2.21\times$ speedup).
-- **Disaggregated Contrastive Scaling (`CLM-8B`)**: Adapting only the dual-tower SwiGLU projection heads ($28.3\text{M}$ params in $1.04\text{ s}$) over a frozen `Qwen3-8B` encoder achieves **98.85%** accuracy (**0.83%** ECE) at **45.78 ms** uncached 1-stream latency, **6.64 ms/query** batched ($B=64$), and **0.60 ms** on HBM `VectorArena` cache hits.
+- **Disaggregated Contrastive Scaling (`CLM-8B`)**: Adapting only the 73 MB dual-tower SwiGLU projection heads ($2.81\text{ s}$ Zero-FPR / $3.73\text{ s}$ Best-Acc) over a frozen `Qwen3-8B` encoder achieves **98.85%** accuracy (**0.83%** ECE, **0.0091** Brier) at **45.78 ms** uncached 1-stream latency, **6.64 ms/query** batched ($B=64$), and **0.60 ms** on HBM `VectorArena` cache hits.
 - **Live End-to-End Serial Cascade ($\theta^*_{\text{deploy}}=0.70$, Held-Out Slice $N=130$)**: Settles **94.62% (123/130)** of queries on Fast CPU and escalates **5.38% (7/130)** to NPU, achieving $\mathbb{E}[T_{\text{server}}] = \mathbf{41.63\text{ ms}}$ (P50: 39.47 ms, P95: 76.25 ms), **99.23% accuracy**, and **0.00% FPR**.
 
 ### 3. OOD Generalization & Alignment Tax Mitigation (`SafetyBench-ZH`, $N=2,100$)
 
-- Incorporating a **15.56% disjoint experience replay mix ($N_{\text{replay}}=458$)** recovers OOD accuracy on `SafetyBench-ZH` from 56.81% (pure domain fine-tuning) to **65.05%** ($+4.72\%$ above the zero-shot base model) while simultaneously lifting in-domain accuracy to **99.67%** (605/607). For `CLM-8B`, rehearsal lifts `Clean-607` accuracy to **99.84%** (**0.00% FPR**, **0.86% ECE**) while recovering `SafetyBench-ZH` OOD accuracy from 60.48% to **64.10%**.
+- Incorporating a **15.56% disjoint experience replay mix ($N_{\text{replay}}=458$)** recovers OOD accuracy on `SafetyBench-ZH` from 56.81% (pure domain fine-tuning) to **65.05%** ($+4.72\%$ above the zero-shot base model) while simultaneously lifting in-domain accuracy to **99.67%** (605/607). For `CLM-8B`, rehearsal lifts `Clean-607` accuracy to **99.84%** (**0.00% FPR**, **0.86% ECE**) while recovering `SafetyBench-ZH` OOD accuracy from 55.10% to **64.10%**.
 
 ---
 
